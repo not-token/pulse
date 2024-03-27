@@ -106,6 +106,10 @@ export async function POST(request: Request) {
               : incomingTransferEvent.data.asset_identifier,
         },
       } satisfies InsertTransaction;
+    })
+    .filter((tx) => {
+      const notId = "SP32AEEF6WW5Y0NMJ1S8SBSZDAY8R5J32NBZFPKKZ.nope::NOT";
+      return tx.data.inToken === notId || tx.data.outToken === notId;
     });
 
   for (const transaction of transactionsToInsert) {

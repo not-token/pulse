@@ -90,10 +90,10 @@ export const getTransactions = async ({
       tokenIds.push(transaction.data.tokenX, transaction.data.tokenY);
     } else if (transaction.action === "remove-liquidity") {
       tokenIds.push(transaction.data.tokenX, transaction.data.tokenY);
-    } else if (transaction.action === "stackingdao-deposit") {
-      tokenIds.push(transaction.data.inToken, transaction.data.outToken);
-    } else if (transaction.action === "stackingdao-withdraw") {
-      tokenIds.push(transaction.data.inToken, transaction.data.outToken);
+      // } else if (transaction.action === "stackingdao-deposit") {
+      //   tokenIds.push(transaction.data.inToken, transaction.data.outToken);
+      // } else if (transaction.action === "stackingdao-withdraw") {
+      //   tokenIds.push(transaction.data.inToken, transaction.data.outToken);
     }
   });
   const uniqueTokenIds = Array.from(new Set([...tokenIds]));
